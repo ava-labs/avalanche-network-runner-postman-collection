@@ -7,29 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Ping",
-			"item": [
-				{
-					"name": "Ping",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/ping",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"ping"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Control",
 			"item": [
 				{
@@ -578,6 +555,29 @@
 								"v1",
 								"control",
 								"waitforhealthy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ping",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/ping",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"ping"
 							]
 						}
 					},
