@@ -17,7 +17,7 @@ Create an Avalanche Subnet with 5 validators running and instance of the Subnet 
 
 Fire up a server. This should be the only command-line step 👏
 
-```json
+```zsh
 avalanche-network-runner server \
 --log-level debug \
 --port=":8080" \
@@ -41,12 +41,13 @@ Now, in Postman, paste the following into the POST body for Controls/Start.
     }
   ]
 }
+```
 
-# check in the response for the subnet id
-...
+check in the response for the subnet id
+
+```json
 "subnets": {
     "p433wpuXyJiDhyazPYyZMJeaoPSW76CBZ2x7wrVPLgvokotXz": {
-...
 ```
 
 ### createsubnets
