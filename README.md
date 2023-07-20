@@ -51,6 +51,8 @@ Now, in Postman, paste the following into the POST body for Controls/Start.
 
 ### createsubnets
 
+Paste the following into the POST body for Controls/CreateSubnets.
+
 ```json
 {
     "participants": [
