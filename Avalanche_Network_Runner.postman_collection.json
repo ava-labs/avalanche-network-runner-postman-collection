@@ -90,6 +90,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"{{vm_name}}\",\n      \"genesis\": \"{{genesis_path}}\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/createblockchains",
 							"host": [
@@ -109,6 +118,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// TODO - how should this body be formatted?\n{\n    \"participants\": [\n        \"node1\",\n        \"node2\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/createsubnets",
 							"host": [
@@ -204,15 +222,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/listrpcs",
+							"raw": "{{baseURL}}/v1/control/listsubnets",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"v1",
 								"control",
-								"listrpcs"
+								"listsubnets"
 							]
 						}
 					},
@@ -223,6 +250,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"snapshot_name\":\"node5\",\n    \"execPath\":\"{{avalanchego_exec_path}}\",\n    \"pluginDir\":\"{{avalanchego_plugin_path}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/loadsnapshot",
 							"host": [
@@ -280,6 +316,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"snapshot_name\":\"node5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/removesnapshot",
 							"host": [
@@ -356,6 +401,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"snapshot_name\":\"node5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/savesnapshot",
 							"host": [
@@ -396,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"numNodes\": 5,\n  \"logLevel\": \"INFO\",\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"subnetevm\",\n      \"genesis\": \"/tmp/subnet-evm.genesis.json\"\n    }\n  ]\n}",
+							"raw": "{\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"numNodes\": 5,\n  \"logLevel\": \"INFO\",\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"subnetevm\",\n      \"genesis\": \"{{vm_config_path}}\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -422,6 +476,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/status",
 							"host": [
@@ -441,6 +504,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/stop",
 							"host": [
