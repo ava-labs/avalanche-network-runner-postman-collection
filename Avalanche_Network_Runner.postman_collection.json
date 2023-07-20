@@ -394,6 +394,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"numNodes\": 5,\n  \"logLevel\": \"INFO\",\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"subnetevm\",\n      \"genesis\": \"/tmp/subnet-evm.genesis.json\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseURL}}/v1/control/start",
 							"host": [
