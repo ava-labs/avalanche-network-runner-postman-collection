@@ -14,10 +14,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{node_name}}\",\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"logLevel\": \"{{log_level}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/addnode",
+							"raw": "{{base_url}}/v1/control/addnode",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -33,10 +42,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subnet_id\": \"{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"asset_id\": \"{{asset_id}}\",\n    \"staked_token_amount\": 2000,\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/addpermissionlessdelegator",
+							"raw": "{{base_url}}/v1/control/addpermissionlessdelegator",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -52,10 +70,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subnet_id\": \"'{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"staked_token_amount\": 2000,\n    \"asset_id\": \"{{asset_name}}\",\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336  \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/addpermissionlessvalidator",
+							"raw": "{{base_url}}/v1/control/addpermissionlessvalidator",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -71,10 +98,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodeName\":\"{{node_name}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/attachpeer",
+							"raw": "{{base_url}}/v1/control/attachpeer",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -92,7 +128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"{{vm_name}}\",\n      \"genesis\": \"{{genesis_path}}\"\n    }\n  ]\n}",
+							"raw": "{\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"{{vm_name}}\",\n      \"genesis\": \"{{genesis_path}}\", \n      \"subnet_id\": \"{{subnet_id}}\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -100,9 +136,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/createblockchains",
+							"raw": "{{base_url}}/v1/control/createblockchains",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -120,7 +156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// TODO - how should this body be formatted?\n{\n    \"participants\": [\n        \"node1\",\n        \"node2\"\n    ]\n}",
+							"raw": "// TODO - how should this body be formatted?\n{\n    \"participants\": [\n        \"node1\",\n        \"node2\",\n        \"node3\",\n        \"node4\",\n        \"node5\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,9 +164,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/createsubnets",
+							"raw": "{{base_url}}/v1/control/createsubnets",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -142,14 +178,51 @@
 					"response": []
 				},
 				{
+					"name": "ElasticSubnets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// TODO - how should this body be formatted?\n{\n    \"subnet_id\": \"{{subnet_id}}\",\n    \"asset_name\": \"{{asset_name}}\",\n    \"asset_symbol\": \"{{asset_symbol }}\",\n    \"initial_supply\": 240000000,\n    \"max_supply\": 720000000,\n    \"min_consumption_rate\": 100000,\n    \"max_consumption_rate\": 120000,\n    \"min_validator_stake\": 2000,\n    \"max_validator_stake\": 3000000,\n    \"min_stake_duration\": 336,\n    \"max_stake_duration\": 8760,\n    \"min_delegation_fee\": 20000,\n    \"min_delegator_stake\": 25,\n    \"max_validator_weight_factor\": 5,\n    \"uptime_requirement\": 800000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/control/elasticsubnets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"elasticsubnets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetSnapshotNames",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/getsnapshotnames",
+							"raw": "{{base_url}}/v1/control/getsnapshotnames",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -166,9 +239,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/health",
+							"raw": "{{base_url}}/v1/control/health",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -185,9 +258,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/listblockchains",
+							"raw": "{{base_url}}/v1/control/listblockchains",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -204,9 +277,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/listrpcs",
+							"raw": "{{base_url}}/v1/control/listrpcs",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -232,9 +305,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/listsubnets",
+							"raw": "{{base_url}}/v1/control/listsubnets",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -252,7 +325,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"snapshot_name\":\"node5\",\n    \"execPath\":\"{{avalanchego_exec_path}}\",\n    \"pluginDir\":\"{{avalanchego_plugin_path}}\"\n}",
+							"raw": "{\n    \"snapshot_name\":\"{{node_name}}\",\n    \"execPath\":\"{{avalanchego_exec_path}}\",\n    \"pluginDir\":\"{{avalanchego_plugin_path}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -260,9 +333,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/loadsnapshot",
+							"raw": "{{base_url}}/v1/control/loadsnapshot",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -278,10 +351,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{node_name}}\",\n  \"logLevel\": \"{{log_level}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/pausenode",
+							"raw": "{{base_url}}/v1/control/pausenode",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -297,10 +379,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"{{node_name}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/removenode",
+							"raw": "{{base_url}}/v1/control/removenode",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -318,7 +409,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"snapshot_name\":\"node5\"\n}",
+							"raw": "{\n    \"snapshot_name\":\"{{node_name}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -326,9 +417,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/removesnapshot",
+							"raw": "{{base_url}}/v1/control/removesnapshot",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -344,10 +435,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subnet_id\": \"{{subnet_id}}\",\n    \"node_names\": [\n      \"{{node_name}}\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/removesubnetvalidator",
+							"raw": "{{base_url}}/v1/control/removesubnetvalidator",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -363,10 +463,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{node_name}}\",\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"logLevel\": \"{{log_level}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/restartnode",
+							"raw": "{{base_url}}/v1/control/restartnode",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -382,10 +491,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{node_name}}\",\n  \"logLevel\": \"{{log_level}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/resumenode",
+							"raw": "{{base_url}}/v1/control/resumenode",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -411,9 +529,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/savesnapshot",
+							"raw": "{{base_url}}/v1/control/savesnapshot",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -429,10 +547,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nodeName\": \"{{node_name}}\",\n  \"peerId\": \"{{peer_id}}\",\n  \"op\": {{op}},\n  \"bytes\": \"{{bytes}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/sendoutboundmessage",
+							"raw": "{{base_url}}/v1/control/sendoutboundmessage",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -450,7 +577,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"numNodes\": 5,\n  \"logLevel\": \"INFO\",\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"subnetevm\",\n      \"genesis\": \"{{vm_config_path}}\"\n    }\n  ]\n}",
+							"raw": "{\n  \"execPath\": \"{{avalanchego_exec_path}}\",\n  \"numNodes\": {{num_modes}},\n  \"logLevel\": \"{{log_level}}\",\n  \"pluginDir\": \"{{avalanchego_plugin_path}}\",\n  \"blockchainSpecs\": [\n    {\n      \"vm_name\": \"{{vm_name}}\",\n      \"genesis\": \"{{vm_config_path}}\"\n    }\n  ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -458,9 +585,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/start",
+							"raw": "{{base_url}}/v1/control/start",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -486,9 +613,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/status",
+							"raw": "{{base_url}}/v1/control/status",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -514,9 +641,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/stop",
+							"raw": "{{base_url}}/v1/control/stop",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -533,9 +660,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/streamstatus",
+							"raw": "{{base_url}}/v1/control/streamstatus",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -551,10 +678,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// TODO - how should this body be formatted?\n{\n    \"subnet_id\": \"{{subnet_id}}\",\n    \"asset_name\": \"{{asset_name}}\",\n    \"asset_symbol\": \"{{asset_symbol }}\",\n    \"initial_supply\": 240000000,\n    \"max_supply\": 720000000,\n    \"min_consumption_rate\": 100000,\n    \"max_consumption_rate\": 120000,\n    \"min_validator_stake\": 2000,\n    \"max_validator_stake\": 3000000,\n    \"min_stake_duration\": 336,\n    \"max_stake_duration\": 8760,\n    \"min_delegation_fee\": 20000,\n    \"min_delegator_stake\": 25,\n    \"max_validator_weight_factor\": 5,\n    \"uptime_requirement\": 800000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/control/transformelasticsubnets",
+							"raw": "{{base_url}}/v1/control/transformelasticsubnets",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -571,9 +707,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/uris",
+							"raw": "{{base_url}}/v1/control/uris",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -590,9 +726,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/rpcversion",
+							"raw": "{{base_url}}/v1/control/rpcversion",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -609,9 +745,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/vmid",
+							"raw": "{{base_url}}/v1/control/vmid",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -628,9 +764,9 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/waitforhealthy",
+							"raw": "{{base_url}}/v1/control/waitforhealthy",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
@@ -651,10 +787,19 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseURL}}/v1/ping",
+							"raw": "{{base_url}}/v1/ping",
 							"host": [
-								"{{baseURL}}"
+								"{{base_url}}"
 							],
 							"path": [
 								"v1",
