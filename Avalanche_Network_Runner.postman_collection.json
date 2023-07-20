@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c8b126ba-2a2d-48bc-8b07-d2caba9033e3",
-		"name": "Avalanche Network Runner",
+		"name": "Avalanche_Network_Runner",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "12086068"
 	},
@@ -33,76 +33,19 @@
 			"name": "Control",
 			"item": [
 				{
-					"name": "Version",
+					"name": "AddNode",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/rpcversion",
+							"raw": "{{baseURL}}/v1/control/addnode",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"v1",
 								"control",
-								"rpcversion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Start",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/start",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"start"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "CreateBlockchains",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/createblockchains",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"createblockchains"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "TransformElasticSubnets",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/transformelasticsubnets",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"transformelasticsubnets"
+								"addnode"
 							]
 						}
 					},
@@ -147,19 +90,38 @@
 					"response": []
 				},
 				{
-					"name": "RemoveSubnetValidator",
+					"name": "AttachPeer",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/removesubnetvalidator",
+							"raw": "{{baseURL}}/v1/control/attachpeer",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"v1",
 								"control",
-								"removesubnetvalidator"
+								"attachpeer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBlockchains",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/createblockchains",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"createblockchains"
 							]
 						}
 					},
@@ -185,310 +147,6 @@
 					"response": []
 				},
 				{
-					"name": "Health",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/health",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"health"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "URIs",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/uris",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"uris"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "WaitForHealthy",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/waitforhealthy",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"waitforhealthy"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Status",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/status",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"status"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "StreamStatus",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/streamstatus",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"streamstatus"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "RemoveNode",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/removenode",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"removenode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AddNode",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/addnode",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"addnode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "RestartNode",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/restartnode",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"restartnode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PauseNode",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/pausenode",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"pausenode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ResumeNode",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/resumenode",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"resumenode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Stop",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/stop",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"stop"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AttachPeer",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/attachpeer",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"attachpeer"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "SendOutboundMessage",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/sendoutboundmessage",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"sendoutboundmessage"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "SaveSnapshot",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/savesnapshot",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"savesnapshot"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "LoadSnapshot",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/loadsnapshot",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"loadsnapshot"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "RemoveSnapshot",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/v1/control/removesnapshot",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"v1",
-								"control",
-								"removesnapshot"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GetSnapshotNames",
 					"request": {
 						"method": "POST",
@@ -508,19 +166,19 @@
 					"response": []
 				},
 				{
-					"name": "ListSubnets",
+					"name": "Health",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/v1/control/listrpcs",
+							"raw": "{{baseURL}}/v1/control/health",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"v1",
 								"control",
-								"listrpcs"
+								"health"
 							]
 						}
 					},
@@ -565,6 +223,329 @@
 					"response": []
 				},
 				{
+					"name": "ListSubnets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/listrpcs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"listrpcs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoadSnapshot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/loadsnapshot",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"loadsnapshot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PauseNode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/pausenode",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"pausenode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveNode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/removenode",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"removenode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveSnapshot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/removesnapshot",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"removesnapshot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveSubnetValidator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/removesubnetvalidator",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"removesubnetvalidator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RestartNode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/restartnode",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"restartnode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResumeNode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/resumenode",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"resumenode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveSnapshot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/savesnapshot",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"savesnapshot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendOutboundMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/sendoutboundmessage",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"sendoutboundmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/start",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/stop",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StreamStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/streamstatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"streamstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransformElasticSubnets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/transformelasticsubnets",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"transformelasticsubnets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URIs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/uris",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"uris"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Version",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/rpcversion",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"rpcversion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "VMID",
 					"request": {
 						"method": "POST",
@@ -578,6 +559,25 @@
 								"v1",
 								"control",
 								"vmid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WaitForHealthy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/v1/control/waitforhealthy",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"v1",
+								"control",
+								"waitforhealthy"
 							]
 						}
 					},
