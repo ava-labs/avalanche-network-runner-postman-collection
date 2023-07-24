@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"subnet_id\": \"{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"asset_id\": \"{{asset_id}}\",\n    \"staked_token_amount\": 2000,\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336\n}",
+							"raw": "{\n    \"validatorSpec\": [{\n    \"subnet_id\": \"'{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"staked_token_amount\": 2000,\n    \"asset_id\": \"{{asset_name}}\",\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336\n    }]  \n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"subnet_id\": \"'{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"staked_token_amount\": 2000,\n    \"asset_id\": \"{{asset_name}}\",\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336  \n}\n",
+							"raw": "{\n    \"validatorSpec\": [{\n    \"subnet_id\": \"'{{subnet_id}}\",\n    \"node_name\": \"{{node_name}}\",\n    \"staked_token_amount\": 2000,\n    \"asset_id\": \"{{asset_name}}\",\n    \"start_time\": \"2023-05-25 21:00:00\",\n    \"stake_duration\": 336\n    }]  \n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
