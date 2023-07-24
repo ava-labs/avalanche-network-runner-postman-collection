@@ -31,7 +31,7 @@ Now, in Postman, paste the following into the POST body for Controls/Start.
 ```json
 {
   "execPath": "{{avalanchego_exec_path}}",
-  "numNodes": {{num_modes}},
+  "numNodes": {{num_nodes}},
   "logLevel": "{{log_level}}",
   "pluginDir": "{{avalanchego_plugin_path}}",
   "blockchainSpecs": [
